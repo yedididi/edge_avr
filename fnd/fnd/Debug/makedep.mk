@@ -4,6 +4,8 @@
 
 ap\stopwatch\stopwatch.c
 
+ap\stopwatch_\stopwatch_.c
+
 common\timetick\timetick.c
 
 driver\button\button.c

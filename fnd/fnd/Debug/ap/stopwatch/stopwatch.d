@@ -1,5 +1,6 @@
 ap/stopwatch/stopwatch.d ap/stopwatch/stopwatch.o: \
  ../ap/stopwatch/stopwatch.c ../ap/stopwatch/stopwatch.h \
+ ../ap/stopwatch/../../driver/fnd/fnd.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -15,7 +16,6 @@ ap/stopwatch/stopwatch.d ap/stopwatch/stopwatch.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- ../ap/stopwatch/../../driver/fnd/fnd.h \
  ../ap/stopwatch/../../periph/GPIO/GPIO.h \
  ../ap/stopwatch/../../periph/TIM/TIM.h \
  ../ap/stopwatch/../../driver/button/button.h \
@@ -23,6 +23,8 @@ ap/stopwatch/stopwatch.d ap/stopwatch/stopwatch.o: \
  ../ap/stopwatch/../../common/timetick/timetick.h
 
 ../ap/stopwatch/stopwatch.h:
+
+../ap/stopwatch/../../driver/fnd/fnd.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -53,8 +55,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
-
-../ap/stopwatch/../../driver/fnd/fnd.h:
 
 ../ap/stopwatch/../../periph/GPIO/GPIO.h:
 

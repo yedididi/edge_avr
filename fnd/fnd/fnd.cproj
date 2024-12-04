@@ -145,6 +145,12 @@
     <Compile Include="ap\stopwatch\stopwatch.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="ap\stopwatch_\stopwatch_.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ap\stopwatch_\stopwatch_.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="common\timetick\timetick.c">
       <SubType>compile</SubType>
     </Compile>
@@ -181,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ap\stopwatch" />
+    <Folder Include="ap\stopwatch_" />
     <Folder Include="common\timetick" />
     <Folder Include="driver" />
     <Folder Include="driver\fnd" />

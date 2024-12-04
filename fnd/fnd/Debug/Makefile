@@ -34,6 +34,7 @@ LINKER_SCRIPT_DEP:=
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
 ../ap/stopwatch \
+../ap/stopwatch_ \
 ../common/timetick \
 ../driver \
 ../driver/fnd \
@@ -48,6 +49,7 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../ap/stopwatch/stopwatch.c \
+../ap/stopwatch_/stopwatch_.c \
 ../common/timetick/timetick.c \
 ../driver/button/button.c \
 ../driver/fnd/fnd.c \
@@ -64,6 +66,7 @@ ASM_SRCS +=
 
 OBJS +=  \
 ap/stopwatch/stopwatch.o \
+ap/stopwatch_/stopwatch_.o \
 common/timetick/timetick.o \
 driver/button/button.o \
 driver/fnd/fnd.o \
@@ -73,6 +76,7 @@ periph/TIM/TIM.o
 
 OBJS_AS_ARGS +=  \
 ap/stopwatch/stopwatch.o \
+ap/stopwatch_/stopwatch_.o \
 common/timetick/timetick.o \
 driver/button/button.o \
 driver/fnd/fnd.o \
@@ -82,6 +86,7 @@ periph/TIM/TIM.o
 
 C_DEPS +=  \
 ap/stopwatch/stopwatch.d \
+ap/stopwatch_/stopwatch_.d \
 common/timetick/timetick.d \
 driver/button/button.d \
 driver/fnd/fnd.d \
@@ -91,6 +96,7 @@ periph/TIM/TIM.d
 
 C_DEPS_AS_ARGS +=  \
 ap/stopwatch/stopwatch.d \
+ap/stopwatch_/stopwatch_.d \
 common/timetick/timetick.d \
 driver/button/button.d \
 driver/fnd/fnd.d \
@@ -113,6 +119,13 @@ LINKER_SCRIPT_DEP+=
 
 # AVR32/GNU C Compiler
 ap/stopwatch/stopwatch.o: ../ap/stopwatch/stopwatch.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega128a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+ap/stopwatch_/stopwatch_.o: ../ap/stopwatch_/stopwatch_.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega128a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
