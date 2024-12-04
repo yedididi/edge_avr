@@ -7,6 +7,7 @@ void incMilisec()
 	return;
 	else
 	{
+		changeFndColonFlag();
 		sec = (sec + 1) % 60;
 		if (sec)
 		return;
@@ -29,21 +30,77 @@ void init_timeClock()
 	sec = 0;
 	min = 0;
 	hour = 0;
+	clockState = HOURMIN;
 	
 	//initTIM0();
 	initTIM2();
+	Button_init(&changeclockStateBtn, &DDRA, &PINA, 0);
+	Button_init(&changeModifyStateBtn, &DDRA, &PINA, 1);
+	Button_init(&plusHour, &DDRA, &PINA, 2);
+	Button_init(&plusMin, &DDRA, &PINA, 3);
 }
 
-void displayTime()
+void displayHourMin()
 {
 	uint16_t stopWatchData = 0;
 	
-	stopWatchData = min * 100;
-	stopWatchData += sec;
+	stopWatchData = hour * 100;
+	stopWatchData += min;
+	FND_setfndData(stopWatchData);
+}
+
+void displaySecMilisec()
+{
+	uint16_t stopWatchData = 0;
+	
+	stopWatchData = sec * 100;
+	stopWatchData += milisec / 10;
 	FND_setfndData(stopWatchData);
 }
 
 void execute_timeClock()
 {
-	displayTime();
+	switch(clockState)
+	{
+		case HOURMIN:
+		if (Button_GetState(&changeclockStateBtn) == ACT_RELEASED)
+			clockState = SECMILISEC;
+		if (Button_GetState(&changeModifyStateBtn) == ACT_RELEASED)
+			clockState = MODIFY;
+		break;
+		
+		case SECMILISEC:
+		if (Button_GetState(&changeclockStateBtn) == ACT_RELEASED)
+			clockState = HOURMIN;
+		break;
+		
+		case MODIFY:
+		if (Button_GetState(&changeModifyStateBtn) == ACT_RELEASED)
+			clockState = HOURMIN;
+		break;
+	}
+	
+	switch(clockState)
+	{
+		case HOURMIN:
+			displayHourMin();
+		break;
+		
+		case SECMILISEC:
+			displaySecMilisec();
+		break;
+		
+		case MODIFY:
+		if (Button_GetState(&plusHour) == ACT_RELEASED)
+		{
+			hour = (hour + 1) % 24;
+			displayHourMin();
+		}
+		if (Button_GetState(&plusMin) == ACT_RELEASED)
+		{
+			min = (min + 1) % 24;
+			displayHourMin();
+		}
+		break;
+	}
 }

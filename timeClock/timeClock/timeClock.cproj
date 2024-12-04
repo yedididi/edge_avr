@@ -145,6 +145,12 @@
     <Compile Include="ap\timeClock\timeClock.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="driver\button\button.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="driver\button\button.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="driver\fnd\fnd.c">
       <SubType>compile</SubType>
     </Compile>
@@ -172,6 +178,7 @@
     <Folder Include="ap\timeClock" />
     <Folder Include="driver" />
     <Folder Include="driver\fnd" />
+    <Folder Include="driver\button" />
     <Folder Include="periph" />
     <Folder Include="periph\GPIO" />
     <Folder Include="periph\TIM" />

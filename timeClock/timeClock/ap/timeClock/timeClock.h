@@ -7,15 +7,21 @@
 #include <avr/interrupt.h>
 
 #include "../../driver/fnd/fnd.h"
+#include "../../driver/button/button.h"
 #include "../../periph/GPIO/GPIO.h"
 #include "../../periph/TIM/TIM.h"
 
 void execute_timeClock();
 void init_timeClock();
 void incMilisec();
-void displayTime();
+void displayHourMin();
+void displaySecMilisec();
+
+enum {HOURMIN, SECMILISEC, MODIFY};
 
 uint32_t	milisec;
 uint8_t		sec, min, hour;
+uint8_t		clockState;
+button_t	changeclockStateBtn, changeModifyStateBtn, plusHour, plusMin;
 
 #endif

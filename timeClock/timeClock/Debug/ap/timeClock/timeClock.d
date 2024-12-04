@@ -16,6 +16,8 @@ ap/timeClock/timeClock.d ap/timeClock/timeClock.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  ../ap/timeClock/../../driver/fnd/fnd.h \
+ ../ap/timeClock/../../driver/button/button.h \
+ ../ap/timeClock/../../driver/button/../../periph/GPIO/GPIO.h \
  ../ap/timeClock/../../periph/GPIO/GPIO.h \
  ../ap/timeClock/../../periph/TIM/TIM.h
 
@@ -52,6 +54,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
 ../ap/timeClock/../../driver/fnd/fnd.h:
+
+../ap/timeClock/../../driver/button/button.h:
+
+../ap/timeClock/../../driver/button/../../periph/GPIO/GPIO.h:
 
 ../ap/timeClock/../../periph/GPIO/GPIO.h:
 
