@@ -15,7 +15,7 @@
 void execute_timeClock();
 void init_timeClock();
 void incMilisec();
-void displayClock();
+void displayClock(int row, int col);
 
 enum {CLOCK, MODIFY};
 

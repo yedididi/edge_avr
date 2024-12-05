@@ -2,7 +2,6 @@
 
 ISR(TIMER2_COMP_vect)
 {
-	//FND_ISR_Process();
 	incMilisec();
 }
 

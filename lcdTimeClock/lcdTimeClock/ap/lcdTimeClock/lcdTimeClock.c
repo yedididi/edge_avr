@@ -39,37 +39,32 @@ void init_timeClock()
 	Button_init(&plusSec, &DDRA, &PINA, 3);
 }
 
-void displayClock()
+void displayClock(int row, int col)
 {
 	char buff[30];
 	
-	sprintf(buff, "%d:%d:%d", hour, min, sec);
-	LCD_writeStringXY(0, 5, buff);
+	if (sec < 10)
+		sprintf(buff, "%d:%d:0%d", hour, min, sec);
+	else
+		sprintf(buff, "%d:%d:%d", hour, min, sec);
+	LCD_writeStringXY(row, col, buff);
 }
 
 void modifyMode()
 {
 	if (Button_GetState(&plusHour) == ACT_RELEASED)
-	{
 		backupHour = (backupHour + 1) % 24;
-	}
 	if (Button_GetState(&plusMin) == ACT_RELEASED)
-	{
 		backupMin = (backupMin + 1) % 24;
-	}
 	if (Button_GetState(&plusSec) == ACT_RELEASED)
-	{
 		backupSec = (backupSec + 1) % 60;
-	}
 	
 	hour = backupHour;
 	min = backupMin;
 	sec = backupSec; 
 	
 	LCD_writeStringXY(0, 3, "Modify mode");
-	char buff[30];
-	sprintf(buff, "%d:%d:%d", hour, min, sec);
-	LCD_writeStringXY(1, 5, buff);
+	displayClock(1, 5);
 }
 
 void execute_timeClock()
@@ -98,7 +93,7 @@ void execute_timeClock()
 	switch(clockState)
 	{
 		case CLOCK:
-		displayClock();
+		displayClock(0, 5);
 		break;
 		
 		case MODIFY:
