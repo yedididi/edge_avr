@@ -16,7 +16,6 @@
 #define FND_DIGIT_4		7
 #define FND_COLON		10
 
-
 void FND_init();
 void showNum(uint16_t num);
 void FND_setfndData(uint16_t mydata);

@@ -51,11 +51,14 @@ void displayHourMin()
 
 void displaySecMilisec()
 {
-	uint16_t stopWatchData = 0;
+	uint16_t stopWatchData = 0; 
 	
 	stopWatchData = sec * 100;
 	stopWatchData += milisec / 10;
 	FND_setfndData(stopWatchData);
+	
+	//if (milisec < something) changeFndColonFlag();
+	//else ;
 }
 
 void execute_timeClock()
