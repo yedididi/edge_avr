@@ -55,6 +55,10 @@ Discarded input sections
  .text          0x00000000        0x0 driver/LCD/LCD.o
  .data          0x00000000        0x0 driver/LCD/LCD.o
  .bss           0x00000000        0x0 driver/LCD/LCD.o
+ .text.GPIO_writeData
+                0x00000000        0x4 driver/LCD/LCD.o
+ .text.LCD_displayClear
+                0x00000000        0x8 driver/LCD/LCD.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -63,8 +67,6 @@ Discarded input sections
  .bss           0x00000000        0x0 periph/GPIO/GPIO.o
  .text.GPIO_initPort
                 0x00000000       0x12 periph/GPIO/GPIO.o
- .text.GPIO_writePort
-                0x00000000        0x6 periph/GPIO/GPIO.o
  .text.GPIO_writePin
                 0x00000000       0x34 periph/GPIO/GPIO.o
  .text.GPIO_readPort
@@ -316,7 +318,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xbd6
+.text           0x00000000      0xbae
  *(.vectors)
  .vectors       0x00000000       0x8c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega128a/avr51/crtatmega128a.o
                 0x00000000                __vector_default
@@ -418,109 +420,109 @@ END GROUP
                 0x00000146       0x66 ap/lcdTimeClock/lcdTimeClock.o
                 0x00000146                init_timeClock
  .text.displayClock
-                0x000001ac       0xa8 ap/lcdTimeClock/lcdTimeClock.o
+                0x000001ac       0x78 ap/lcdTimeClock/lcdTimeClock.o
                 0x000001ac                displayClock
  .text.modifyMode
-                0x00000254       0x82 ap/lcdTimeClock/lcdTimeClock.o
-                0x00000254                modifyMode
+                0x00000224       0x82 ap/lcdTimeClock/lcdTimeClock.o
+                0x00000224                modifyMode
  .text.execute_timeClock
-                0x000002d6       0x68 ap/lcdTimeClock/lcdTimeClock.o
-                0x000002d6                execute_timeClock
+                0x000002a6       0x68 ap/lcdTimeClock/lcdTimeClock.o
+                0x000002a6                execute_timeClock
  .text.Button_init
-                0x0000033e       0x1a driver/button/button.o
-                0x0000033e                Button_init
+                0x0000030e       0x1a driver/button/button.o
+                0x0000030e                Button_init
  .text.Button_GetState
-                0x00000358       0x58 driver/button/button.o
-                0x00000358                Button_GetState
+                0x00000328       0x58 driver/button/button.o
+                0x00000328                Button_GetState
  .text.GPIO_writeControlData
-                0x000003b0        0x4 driver/LCD/LCD.o
-                0x000003b0                GPIO_writeControlData
- .text.GPIO_writeData
-                0x000003b4        0x4 driver/LCD/LCD.o
-                0x000003b4                GPIO_writeData
+                0x00000380        0x4 driver/LCD/LCD.o
+                0x00000380                GPIO_writeControlData
  .text.GPIO_init
-                0x000003b8        0xe driver/LCD/LCD.o
-                0x000003b8                GPIO_init
+                0x00000384        0xe driver/LCD/LCD.o
+                0x00000384                GPIO_init
  .text.LCD_cmdMode
-                0x000003c6        0xe driver/LCD/LCD.o
-                0x000003c6                LCD_cmdMode
+                0x00000392        0xe driver/LCD/LCD.o
+                0x00000392                LCD_cmdMode
  .text.LCD_charMode
-                0x000003d4        0xe driver/LCD/LCD.o
-                0x000003d4                LCD_charMode
+                0x000003a0        0xe driver/LCD/LCD.o
+                0x000003a0                LCD_charMode
  .text.LCD_writeMode
-                0x000003e2        0xe driver/LCD/LCD.o
-                0x000003e2                LCD_writeMode
+                0x000003ae        0xe driver/LCD/LCD.o
+                0x000003ae                LCD_writeMode
  .text.LCD_enableHigh
-                0x000003f0       0x1a driver/LCD/LCD.o
-                0x000003f0                LCD_enableHigh
+                0x000003bc       0x1a driver/LCD/LCD.o
+                0x000003bc                LCD_enableHigh
  .text.LCD_enableLow
-                0x0000040a       0x1a driver/LCD/LCD.o
-                0x0000040a                LCD_enableLow
+                0x000003d6       0x1a driver/LCD/LCD.o
+                0x000003d6                LCD_enableLow
  .text.LCD_writeByte
-                0x00000424        0x4 driver/LCD/LCD.o
-                0x00000424                LCD_writeByte
+                0x000003f0        0xa driver/LCD/LCD.o
+                0x000003f0                LCD_writeByte
  .text.LCD_writeCmdData
-                0x00000428       0x14 driver/LCD/LCD.o
-                0x00000428                LCD_writeCmdData
+                0x000003fa       0x14 driver/LCD/LCD.o
+                0x000003fa                LCD_writeCmdData
  .text.LCD_init
-                0x0000043c       0x48 driver/LCD/LCD.o
-                0x0000043c                LCD_init
+                0x0000040e       0x48 driver/LCD/LCD.o
+                0x0000040e                LCD_init
  .text.LCD_writeCharData
-                0x00000484       0x14 driver/LCD/LCD.o
-                0x00000484                LCD_writeCharData
+                0x00000456       0x14 driver/LCD/LCD.o
+                0x00000456                LCD_writeCharData
  .text.LCD_writeString
-                0x00000498       0x2a driver/LCD/LCD.o
-                0x00000498                LCD_writeString
+                0x0000046a       0x2a driver/LCD/LCD.o
+                0x0000046a                LCD_writeString
  .text.LCD_goToXY
-                0x000004c2       0x14 driver/LCD/LCD.o
-                0x000004c2                LCD_goToXY
+                0x00000494       0x14 driver/LCD/LCD.o
+                0x00000494                LCD_goToXY
  .text.LCD_writeStringXY
-                0x000004d6       0x12 driver/LCD/LCD.o
-                0x000004d6                LCD_writeStringXY
+                0x000004a8       0x12 driver/LCD/LCD.o
+                0x000004a8                LCD_writeStringXY
  .text.__vector_9
-                0x000004e8       0x4e main.o
-                0x000004e8                __vector_9
- .text.main     0x00000536        0x8 main.o
-                0x00000536                main
+                0x000004ba       0x4e main.o
+                0x000004ba                __vector_9
+ .text.main     0x00000508        0x8 main.o
+                0x00000508                main
  .text.GPIO_initPin
-                0x0000053e       0x34 periph/GPIO/GPIO.o
-                0x0000053e                GPIO_initPin
+                0x00000510       0x34 periph/GPIO/GPIO.o
+                0x00000510                GPIO_initPin
+ .text.GPIO_writePort
+                0x00000544        0x6 periph/GPIO/GPIO.o
+                0x00000544                GPIO_writePort
  .text.initTIM2
-                0x00000572       0x18 periph/TIM/TIM.o
-                0x00000572                initTIM2
+                0x0000054a       0x18 periph/TIM/TIM.o
+                0x0000054a                initTIM2
  .text.libgcc.div
-                0x0000058a       0x26 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
-                0x0000058a                _div
-                0x0000058a                __divmodhi4
+                0x00000562       0x26 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+                0x00000562                _div
+                0x00000562                __divmodhi4
  .text.libgcc.div
-                0x000005b0       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
-                0x000005b0                __udivmodsi4
+                0x00000588       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+                0x00000588                __udivmodsi4
  .text.libgcc.div
-                0x000005f4       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
-                0x000005f4                __udivmodhi4
+                0x000005cc       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+                0x000005cc                __udivmodhi4
  .text.avr-libc
-                0x0000061c       0x5c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(sprintf.o)
-                0x0000061c                sprintf
+                0x000005f4       0x5c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(sprintf.o)
+                0x000005f4                sprintf
  .text.avr-libc
-                0x00000678      0x3fa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o)
-                0x00000678                vfprintf
+                0x00000650      0x3fa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o)
+                0x00000650                vfprintf
  .text.avr-libc
-                0x00000a72       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen_P.o)
-                0x00000a72                strnlen_P
+                0x00000a4a       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen_P.o)
+                0x00000a4a                strnlen_P
  .text.avr-libc
-                0x00000a88       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen.o)
-                0x00000a88                strnlen
+                0x00000a60       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen.o)
+                0x00000a60                strnlen
  .text.avr-libc
-                0x00000a9e       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(fputc.o)
-                0x00000a9e                fputc
+                0x00000a76       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(fputc.o)
+                0x00000a76                fputc
  .text.avr-libc
-                0x00000b16       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(ultoa_invert.o)
-                0x00000b16                __ultoa_invert
-                0x00000bd2                . = ALIGN (0x2)
+                0x00000aee       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(ultoa_invert.o)
+                0x00000aee                __ultoa_invert
+                0x00000baa                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000bd2        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
-                0x00000bd2                _exit
-                0x00000bd2                exit
+ .fini9         0x00000baa        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+                0x00000baa                _exit
+                0x00000baa                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -539,11 +541,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000bd2        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .fini0         0x00000baa        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000bd6                _etext = .
+                0x00000bae                _etext = .
 
-.data           0x00800100       0x20 load address 0x00000bd6
+.data           0x00800100       0x18 load address 0x00000bae
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -551,41 +553,40 @@ END GROUP
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800100       0x1f ap/lcdTimeClock/lcdTimeClock.o
+                0x00800100       0x18 ap/lcdTimeClock/lcdTimeClock.o
  *(.gnu.linkonce.r*)
-                0x00800120                . = ALIGN (0x2)
- *fill*         0x0080011f        0x1 
-                0x00800120                _edata = .
-                0x00800120                PROVIDE (__data_end, .)
+                0x00800118                . = ALIGN (0x2)
+                0x00800118                _edata = .
+                0x00800118                PROVIDE (__data_end, .)
 
-.bss            0x00800120       0x24
-                0x00800120                PROVIDE (__bss_start, .)
+.bss            0x00800118       0x24
+                0x00800118                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  *(COMMON)
- COMMON         0x00800120       0x24 ap/lcdTimeClock/lcdTimeClock.o
-                0x00800120                clockState
-                0x00800121                milisec
-                0x00800125                changeStateBtn
-                0x0080012b                backupSec
-                0x0080012c                backupHour
-                0x0080012d                plusSec
-                0x00800133                backupMin
-                0x00800134                hour
-                0x00800135                plusHour
-                0x0080013b                lcdControlData
-                0x0080013c                min
-                0x0080013d                sec
-                0x0080013e                plusMin
-                0x00800144                PROVIDE (__bss_end, .)
-                0x00000bd6                __data_load_start = LOADADDR (.data)
-                0x00000bf6                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800118       0x24 ap/lcdTimeClock/lcdTimeClock.o
+                0x00800118                clockState
+                0x00800119                milisec
+                0x0080011d                changeStateBtn
+                0x00800123                backupSec
+                0x00800124                backupHour
+                0x00800125                plusSec
+                0x0080012b                backupMin
+                0x0080012c                hour
+                0x0080012d                plusHour
+                0x00800133                lcdControlData
+                0x00800134                min
+                0x00800135                sec
+                0x00800136                plusMin
+                0x0080013c                PROVIDE (__bss_end, .)
+                0x00000bae                __data_load_start = LOADADDR (.data)
+                0x00000bc6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800144        0x0
+.noinit         0x0080013c        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800144                _end = .
+                0x0080013c                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -659,86 +660,86 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x190
+.debug_aranges  0x00000000      0x198
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x40 ap/lcdTimeClock/lcdTimeClock.o
  .debug_aranges
                 0x00000040       0x28 driver/button/button.o
  .debug_aranges
-                0x00000068       0x90 driver/LCD/LCD.o
+                0x00000068       0x98 driver/LCD/LCD.o
  .debug_aranges
-                0x000000f8       0x28 main.o
+                0x00000100       0x28 main.o
  .debug_aranges
-                0x00000120       0x48 periph/GPIO/GPIO.o
+                0x00000128       0x48 periph/GPIO/GPIO.o
  .debug_aranges
-                0x00000168       0x28 periph/TIM/TIM.o
+                0x00000170       0x28 periph/TIM/TIM.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1a4c
+.debug_info     0x00000000     0x1a83
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x780 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega128a/avr51/crtatmega128a.o
- .debug_info    0x00000780      0x545 ap/lcdTimeClock/lcdTimeClock.o
- .debug_info    0x00000cc5      0x29d driver/button/button.o
- .debug_info    0x00000f62      0x5ff driver/LCD/LCD.o
- .debug_info    0x00001561      0x241 main.o
- .debug_info    0x000017a2      0x213 periph/GPIO/GPIO.o
- .debug_info    0x000019b5       0x97 periph/TIM/TIM.o
+ .debug_info    0x00000780      0x53b ap/lcdTimeClock/lcdTimeClock.o
+ .debug_info    0x00000cbb      0x29d driver/button/button.o
+ .debug_info    0x00000f58      0x640 driver/LCD/LCD.o
+ .debug_info    0x00001598      0x241 main.o
+ .debug_info    0x000017d9      0x213 periph/GPIO/GPIO.o
+ .debug_info    0x000019ec       0x97 periph/TIM/TIM.o
 
-.debug_abbrev   0x00000000      0xe10
+.debug_abbrev   0x00000000      0xe22
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x718 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega128a/avr51/crtatmega128a.o
  .debug_abbrev  0x00000718      0x17b ap/lcdTimeClock/lcdTimeClock.o
  .debug_abbrev  0x00000893      0x1a2 driver/button/button.o
- .debug_abbrev  0x00000a35      0x19e driver/LCD/LCD.o
- .debug_abbrev  0x00000bd3       0xee main.o
- .debug_abbrev  0x00000cc1      0x100 periph/GPIO/GPIO.o
- .debug_abbrev  0x00000dc1       0x4f periph/TIM/TIM.o
+ .debug_abbrev  0x00000a35      0x1b0 driver/LCD/LCD.o
+ .debug_abbrev  0x00000be5       0xee main.o
+ .debug_abbrev  0x00000cd3      0x100 periph/GPIO/GPIO.o
+ .debug_abbrev  0x00000dd3       0x4f periph/TIM/TIM.o
 
-.debug_line     0x00000000      0xccc
+.debug_line     0x00000000      0xd02
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x16a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega128a/avr51/crtatmega128a.o
- .debug_line    0x0000016a      0x2b4 ap/lcdTimeClock/lcdTimeClock.o
- .debug_line    0x0000041e      0x1da driver/button/button.o
- .debug_line    0x000005f8      0x354 driver/LCD/LCD.o
- .debug_line    0x0000094c      0x154 main.o
- .debug_line    0x00000aa0      0x151 periph/GPIO/GPIO.o
- .debug_line    0x00000bf1       0xdb periph/TIM/TIM.o
+ .debug_line    0x0000016a      0x2a8 ap/lcdTimeClock/lcdTimeClock.o
+ .debug_line    0x00000412      0x1da driver/button/button.o
+ .debug_line    0x000005ec      0x396 driver/LCD/LCD.o
+ .debug_line    0x00000982      0x154 main.o
+ .debug_line    0x00000ad6      0x151 periph/GPIO/GPIO.o
+ .debug_line    0x00000c27       0xdb periph/TIM/TIM.o
 
-.debug_frame    0x00000000      0x30c
+.debug_frame    0x00000000      0x324
  *(.debug_frame)
- .debug_frame   0x00000000       0x80 ap/lcdTimeClock/lcdTimeClock.o
- .debug_frame   0x00000080       0x34 driver/button/button.o
- .debug_frame   0x000000b4      0x134 driver/LCD/LCD.o
- .debug_frame   0x000001e8       0x7c main.o
- .debug_frame   0x00000264       0x74 periph/GPIO/GPIO.o
- .debug_frame   0x000002d8       0x34 periph/TIM/TIM.o
+ .debug_frame   0x00000000       0x88 ap/lcdTimeClock/lcdTimeClock.o
+ .debug_frame   0x00000088       0x34 driver/button/button.o
+ .debug_frame   0x000000bc      0x144 driver/LCD/LCD.o
+ .debug_frame   0x00000200       0x7c main.o
+ .debug_frame   0x0000027c       0x74 periph/GPIO/GPIO.o
+ .debug_frame   0x000002f0       0x34 periph/TIM/TIM.o
 
-.debug_str      0x00000000      0x761
+.debug_str      0x00000000      0x7ba
  *(.debug_str)
  .debug_str     0x00000000      0x27d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega128a/avr51/crtatmega128a.o
  .debug_str     0x0000027d      0x2cb ap/lcdTimeClock/lcdTimeClock.o
                                 0x304 (size before relaxing)
- .debug_str     0x00000548       0x7f driver/button/button.o
+ .debug_str     0x00000548       0xc7 driver/button/button.o
                                 0x262 (size before relaxing)
- .debug_str     0x000005c7       0xe2 driver/LCD/LCD.o
-                                0x2d8 (size before relaxing)
- .debug_str     0x000006a9       0x1c main.o
+ .debug_str     0x0000060f      0x102 driver/LCD/LCD.o
+                                0x2f8 (size before relaxing)
+ .debug_str     0x00000711       0x1c main.o
                                 0x251 (size before relaxing)
- .debug_str     0x000006c5       0x7f periph/GPIO/GPIO.o
+ .debug_str     0x0000072d       0x70 periph/GPIO/GPIO.o
                                 0x216 (size before relaxing)
- .debug_str     0x00000744       0x1d periph/TIM/TIM.o
+ .debug_str     0x0000079d       0x1d periph/TIM/TIM.o
                                 0x191 (size before relaxing)
 
-.debug_loc      0x00000000      0x7f9
+.debug_loc      0x00000000      0x800
  *(.debug_loc)
- .debug_loc     0x00000000       0xcb ap/lcdTimeClock/lcdTimeClock.o
- .debug_loc     0x000000cb      0x177 driver/button/button.o
- .debug_loc     0x00000242      0x42c driver/LCD/LCD.o
- .debug_loc     0x0000066e       0xcb main.o
- .debug_loc     0x00000739       0xc0 periph/GPIO/GPIO.o
+ .debug_loc     0x00000000       0xc7 ap/lcdTimeClock/lcdTimeClock.o
+ .debug_loc     0x000000c7      0x177 driver/button/button.o
+ .debug_loc     0x0000023e      0x437 driver/LCD/LCD.o
+ .debug_loc     0x00000675       0xcb main.o
+ .debug_loc     0x00000740       0xc0 periph/GPIO/GPIO.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -758,14 +759,14 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x130
+.debug_ranges   0x00000000      0x138
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x30 ap/lcdTimeClock/lcdTimeClock.o
  .debug_ranges  0x00000030       0x18 driver/button/button.o
- .debug_ranges  0x00000048       0x80 driver/LCD/LCD.o
- .debug_ranges  0x000000c8       0x18 main.o
- .debug_ranges  0x000000e0       0x38 periph/GPIO/GPIO.o
- .debug_ranges  0x00000118       0x18 periph/TIM/TIM.o
+ .debug_ranges  0x00000048       0x88 driver/LCD/LCD.o
+ .debug_ranges  0x000000d0       0x18 main.o
+ .debug_ranges  0x000000e8       0x38 periph/GPIO/GPIO.o
+ .debug_ranges  0x00000120       0x18 periph/TIM/TIM.o
 
 .debug_macro
  *(.debug_macro)

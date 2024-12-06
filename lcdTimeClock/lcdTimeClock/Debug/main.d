@@ -18,6 +18,7 @@ main.d main.o: .././main.c .././ap/lcdTimeClock/lcdTimeClock.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
  .././ap/lcdTimeClock/../../driver/LCD/LCD.h \
+ .././ap/lcdTimeClock/../../driver/LCD/../../periph/GPIO/GPIO.h \
  .././ap/lcdTimeClock/../../driver/button/button.h \
  .././ap/lcdTimeClock/../../driver/button/../../periph/GPIO/GPIO.h \
  .././ap/lcdTimeClock/../../periph/GPIO/GPIO.h \
@@ -62,6 +63,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
 
 .././ap/lcdTimeClock/../../driver/LCD/LCD.h:
+
+.././ap/lcdTimeClock/../../driver/LCD/../../periph/GPIO/GPIO.h:
 
 .././ap/lcdTimeClock/../../driver/button/button.h:
 

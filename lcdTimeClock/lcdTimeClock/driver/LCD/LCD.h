@@ -5,6 +5,8 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
+#include "../../periph/GPIO/GPIO.h"
+
 #define LCD_CONTROL_DDR		DDRB
 #define LCD_DATA_DDR		DDRC
 #define LCD_CONTROL_PORT	PORTB
